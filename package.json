@@ -1,0 +1,23 @@
+{
+  "name": "laravel-fetch-wrapper",
+  "version": "1.0.0",
+  "description": "A wrapper to use the fetch API with Laravel API's",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milandebuck/laravel-fetch-wrapper.git"
+  },
+  "keywords": [
+    "fetch",
+    "laravel"
+  ],
+  "author": "Milan De Buck",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/milandebuck/laravel-fetch-wrapper/issues"
+  },
+  "homepage": "https://github.com/milandebuck/laravel-fetch-wrapper#readme"
+}
