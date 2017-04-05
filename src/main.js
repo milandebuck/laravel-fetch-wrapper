@@ -26,7 +26,7 @@ module.exports ={
 	get(url){
 		let fetchData= {
 			method:'GET',
-			headers:_applyHeaders()
+			headers:this._applyHeaders()
 		}
 		return new Promise((resolve,reject) => {
 			fetch(url,fetchData)
@@ -41,7 +41,7 @@ module.exports ={
 		let fetchData= {
 			method:'POST',
 			body:data,
-			headers:_applyHeaders()
+			headers:this._applyHeaders()
 		}
 		return new Promise((resolve,reject) => {
 			fetch(url,fetchData)
@@ -56,7 +56,7 @@ module.exports ={
 		let fetchData= {
 			method:'PUT',
 			body:data,
-			headers:_applyHeaders()
+			headers:this._applyHeaders()
 		}
 		return new Promise((resolve,reject) => {
 			fetch(url,fetchData)
@@ -71,7 +71,7 @@ module.exports ={
 		let fetchData= {
 			method:'PATCH',
 			body:data,
-			headers:_applyHeaders()
+			headers:this._applyHeaders()
 		}
 		return new Promise((resolve,reject) => {
 			fetch(url,fetchData)
@@ -86,7 +86,7 @@ module.exports ={
 		let fetchData= {
 			method:'DELETE',
 			body:data,
-			headers:_applyHeaders()
+			headers:this._applyHeaders()
 		}
 		return new Promise((resolve,reject) => {
 			fetch(url,fetchData)
