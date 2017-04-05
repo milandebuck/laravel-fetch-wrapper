@@ -10,18 +10,27 @@ also extracts the json data out of the request.
 
 ```javascript
 //import the library
-import { fetchWrapper } from 'laravel-fetch-wrapper'
+import fetchWrapper from 'laravel-fetch-wrapper'
 
 //set the Laravel CSRF Token
 fetchWrapper.setToken(window.csrfToken)
 
 //GET request
 fetchWrapper.get('url')
-	.then(res => console.log(res))
-	.catch(err => console.log(err))
+	.then(res ={
+		//do stuff with the json data
+	})
+	.catch(err => {
+		//handle error
+	})
 
 //POST request
 fetchWrapper.post('url',data)
-	.then(res => console.log(res))
-	.catch(err => console.log(err))
+	.then(res ={
+		//do stuff with the json data
+	})
+	.catch(err => {
+		//handle error
+	})
+
 ```
