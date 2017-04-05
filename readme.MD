@@ -17,7 +17,7 @@ fetchWrapper.setToken(window.csrfToken)
 
 //GET request
 fetchWrapper.get('url')
-	.then(res ={
+	.then(res =>{
 		//do stuff with the json data
 	})
 	.catch(err => {
