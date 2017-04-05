@@ -1,6 +1,6 @@
 {
   "name": "laravel-fetch-wrapper",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A wrapper to use the fetch API with Laravel JSON API's",
   "main": "src/main.js",
   "scripts": {
