@@ -26,7 +26,7 @@ fetchWrapper.get('url')
 
 //POST request
 fetchWrapper.post('url',data)
-	.then(res ={
+	.then(res =>{
 		//do stuff with the json data
 	})
 	.catch(err => {
