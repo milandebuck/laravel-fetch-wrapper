@@ -8,8 +8,7 @@
 module.exports ={
 
 	//middleware to apply the laravel header to the fetch api headers
-	_applyHeaders(){
-		const headers = new Headers()
+	_applyHeaders(headers){
 		if(!this.csrfToken) throw new Error('No CSRF Token provided use the setToken method first')
 		headers.append('X-CSRF-TOKEN',this.csrfToken)
 		headers.append('X-Requested-With','XMLHttpRequest')
@@ -18,15 +17,15 @@ module.exports ={
 
 	//set a token
 	setToken(token){
-		if(token.length === 0)throw new Error('Invalid token');
+		if(!token || token ===  undefined || token.length === 0)throw new Error('Invalid token');
 		this.csrfToken=token;
 	},
 
 	//get request
-	get(url){
+	get(url,headers = new Headers()){
 		let fetchData= {
 			method:'GET',
-			headers:this._applyHeaders()
+			headers:this._applyHeaders(headers)
 		}
 		return new Promise((resolve,reject) => {
 			fetch(url,fetchData)
@@ -37,11 +36,11 @@ module.exports ={
 	},
 
 	//post request
-	post(url,data){
+	post(url,data,headers = new Headers()){
 		let fetchData= {
 			method:'POST',
 			body:data,
-			headers:this._applyHeaders()
+			headers:this._applyHeaders(headers)
 		}
 		return new Promise((resolve,reject) => {
 			fetch(url,fetchData)
@@ -52,11 +51,11 @@ module.exports ={
 	},
 
 	//put request
-	put(url,data){
+	put(url,data,headers = new Headers()){
 		let fetchData= {
 			method:'PUT',
 			body:data,
-			headers:this._applyHeaders()
+			headers:this._applyHeaders(headers)
 		}
 		return new Promise((resolve,reject) => {
 			fetch(url,fetchData)
@@ -67,11 +66,11 @@ module.exports ={
 	},
 
 	//patch request
-	patch(url,data){
+	patch(url,data,headers = new Headers()){
 		let fetchData= {
 			method:'PATCH',
 			body:data,
-			headers:this._applyHeaders()
+			headers:this._applyHeaders(headers)
 		}
 		return new Promise((resolve,reject) => {
 			fetch(url,fetchData)
@@ -82,11 +81,11 @@ module.exports ={
 	},
 
 	//delete request
-	delete(url,data){
+	delete(url,data,headers = new Headers()){
 		let fetchData= {
 			method:'DELETE',
 			body:data,
-			headers:this._applyHeaders()
+			headers:this._applyHeaders(headers)
 		}
 		return new Promise((resolve,reject) => {
 			fetch(url,fetchData)
