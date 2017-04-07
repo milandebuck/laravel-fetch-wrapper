@@ -9,14 +9,15 @@ module.exports ={
 
 	//sets a permanent header value used for all requests
 	setHeader(name,value){
-		if(typeof name !== 'string')throw new Error('name of the header should be a String not an ' + typeof name)
+		if(typeof name !== 'string')throw new Error('name of the header should be a String not an ' + typeof name);
 		if(!this.headers)this.headers=[];
 		this.headers.push({name:name,value:value});
 	},
 
 	//remove a Header from the permanent header list
 	removeHeader(name){
-
+		if(typeof name !== 'string')throw new Error('name of the header should be a String not an ' + typeof name);
+		if(this.headers.has(name))this.headers.delete(name)
 	},
 	//middleware to apply the laravel header to the fetch api headers
 	_applyHeaders(headers){
